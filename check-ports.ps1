@@ -1,5 +1,5 @@
 # Script zum Prüfen aller verwendeten Ports
-Write-Host "🔍 Prüfe Ports..." -ForegroundColor Cyan
+Write-Host "Prüfe Ports..." -ForegroundColor Cyan
 Write-Host ""
 
 $ports = @(8000, 11434, 3000, 5000, 9000)
@@ -12,13 +12,13 @@ foreach ($port in $ports) {
     $connection = Get-NetTCPConnection -LocalPort $port -ErrorAction SilentlyContinue
     if ($connection) {
         $process = Get-Process -Id $connection.OwningProcess -ErrorAction SilentlyContinue
-        $status = "🔴 BELEGT"
+        $status = "BELEGT"
         $color = "Red"
         
         # Prüfe ob Docker-Container
         $dockerInfo = $dockerContainers | Select-String ":$port"
         if ($dockerInfo) {
-            $status = "🔴 BELEGT (Docker)"
+            $status = "BELEGT (Docker)"
             $color = "Yellow"
         }
         
@@ -31,11 +31,12 @@ foreach ($port in $ports) {
             Write-Host "    → Container: $($parts[1]) (ID: $($parts[0]))" -ForegroundColor Cyan
         }
     } else {
-        Write-Host "  Port $port : ✅ FREI" -ForegroundColor Green
+        Write-Host "  Port $port : FREI" -ForegroundColor Green
     }
 }
 
 Write-Host ""
 Write-Host "Docker-Container:" -ForegroundColor Yellow
 docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+
  
