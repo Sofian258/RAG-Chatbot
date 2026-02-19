@@ -1,36 +1,57 @@
-# RAG-Chatbot
-Multi-Tenant RAG-Chatbot mit FastAPI, lokalen LLMs (Ollama) und Vektordatenbanken (ChromaDB). Unterstützt TXT, PDF und OCR. Multi-Modell-Routing, intelligente Text-Segmentierung und firmenspezifische Dokumentenverwaltung.
+# Cursor Tasks für Chatbot-Projekt
 
+Dieses Verzeichnis enthält die Task-Konfiguration für das Chatbot-Projekt.
 
+## Verfügbare Tasks
 
-# Multi-Tenant RAG-Chatbot System
+### Port-Management
 
-Ein intelligenter, firmenspezifischer Chatbot mit RAG (Retrieval-Augmented Generation), der Dokumente verarbeitet und KI-gestützte Antworten generiert.
+**Check Ports**
+- Prüft den Status aller wichtigen Ports (8000, 11434, 3000, 5000, 9000)
+- Zeigt laufende Docker-Container an
+- Identifiziert, welche Prozesse Ports blockieren
 
-## Features
+**Start Chatbot Container**
+- Startet den Chatbot-Container mit automatischer Port-Konflikt-Erkennung
+- Bietet Lösungsoptionen bei Port-Konflikten:
+  - Automatisch freien Port finden
+  - Blockierenden Prozess beenden
+  - Docker-Container stoppen
 
-- Multi-Tenant-Architektur: Jede Firma hat isolierte Dokumente und Indizes
-- RAG-System: Kombiniert semantische Suche mit LLM-Generierung
-- Multi-Format-Support: TXT, PDF und Bilder (mit OCR)
-- Lokale LLMs: Integration mit Ollama (qwen2.5, llama3.2, mixtral)
-- Vektordatenbanken: ChromaDB für semantische Suche
-- Intelligente Segmentierung: Automatische Überschriften-Erkennung
-- Multi-Modell-Routing: Intelligente Modellauswahl basierend auf Komplexität
-- Projekt-Management: API für Projekt-Verwaltung
-- Docker-Ready: Vollständig containerisiert
+### Container-Management
 
-Tech Stack
+**Stop Chatbot Container**
+- Stoppt alle Container des Chatbot-Projekts
 
-- Backend: FastAPI, Python 3.11
-- AI/ML: Ollama, Sentence Transformers, ChromaDB
-- Dokumentenverarbeitung: PyPDF2, Tesseract OCR
-- Container: Docker, Docker Compose
-- Frontend: Vanilla JavaScript Widget
+**Restart Chatbot Container**
+- Startet alle Container neu
 
-## Quick Start
+**View Container Logs**
+- Zeigt die Logs aller Container (letzte 50 Zeilen, live)
 
-docker-compose up -d
+## Verwendung
 
+### Über das Command Palette:
+1. Drücken Sie `Ctrl+Shift+P` (oder `Cmd+Shift+P` auf Mac)
+2. Tippen Sie "Tasks: Run Task"
+3. Wählen Sie den gewünschten Task aus
 
-##API-Dokumentation
-API verfügbar unter: http://localhost:8000
+### Über die Tastenkombination:
+- `Ctrl+Shift+B` → Öffnet "Run Build Task" (für Build-Tasks)
+- `Ctrl+Shift+T` → Öffnet "Run Test Task" (für Test-Tasks)
+
+### Über das Terminal-Menü:
+1. Öffnen Sie das Terminal (`Ctrl+`` `)
+2. Klicken Sie auf das Dropdown-Menü "Tasks"
+3. Wählen Sie den gewünschten Task aus
+
+## Task-Gruppen
+
+- **Build-Tasks**: Start Chatbot Container, Stop Chatbot Container, Restart Chatbot Container
+- **Test-Tasks**: Check Ports, View Container Logs
+
+## Hinweise
+
+- Alle PowerShell-Scripts werden mit `-ExecutionPolicy Bypass` ausgeführt
+- Die Tasks öffnen ein neues Terminal-Panel für die Ausgabe
+- Bei interaktiven Scripts (z.B. Start Chatbot Container) können Sie im Terminal interagieren
