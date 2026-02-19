@@ -1,11 +1,11 @@
-# 📊 Projekt-Analyse: Chatbot-System
+# Projekt-Analyse: Chatbot-System
 
-## 🎯 Projekt-Übersicht
+## Projekt-Übersicht
 Ein intelligenter Firmen-Chatbot, der Kundenfragen zu Öffnungszeiten, Versand, Rückgabe und Zahlung beantwortet. Das System kombiniert Cloud-basierte KI (OpenAI) mit lokaler semantischer Suche.
 
 ---
 
-## 🛠️ Verwendete Technologien & Frameworks
+## Verwendete Technologien & Frameworks
 
 ### **Backend (Python)**
 1. **FastAPI** - Modernes Web-Framework für REST-API
@@ -49,7 +49,7 @@ Ein intelligenter Firmen-Chatbot, der Kundenfragen zu Öffnungszeiten, Versand, 
 
 ---
 
-## 🏗️ Architektur & Design-Patterns
+## Architektur & Design-Patterns
 
 ### **Hybrid-Suchstrategie (Cloud-First + Local-Backup)**
 
@@ -80,7 +80,7 @@ Ein intelligenter Firmen-Chatbot, der Kundenfragen zu Öffnungszeiten, Versand, 
 
 ---
 
-## 🔍 Technische Details
+## Technische Details
 
 ### **1. Topic Detection (Cloud)**
 - **Modell:** GPT-4o-mini
@@ -108,7 +108,7 @@ RSQ = 0.75 × best_score + 0.25 × margin
 
 ---
 
-## 📋 API-Endpunkte
+##  API-Endpunkte
 
 ### **GET /health**
 - Health-Check Endpoint
@@ -169,7 +169,7 @@ RSQ = 0.75 × best_score + 0.25 × margin
 
 ---
 
-## 🎨 Frontend-Features
+##  Frontend-Features
 
 ### **UI/UX:**
 - ✅ Floating Action Button (FAB)
@@ -189,7 +189,7 @@ RSQ = 0.75 × best_score + 0.25 × margin
 
 ---
 
-## 🔐 Sicherheit & Best Practices
+##  Sicherheit & Best Practices
 
 ### **✅ Gut implementiert:**
 - Input-Validierung (Pydantic)
@@ -197,7 +197,7 @@ RSQ = 0.75 × best_score + 0.25 × margin
 - CORS-Middleware
 - Environment-Variablen für API-Keys
 
-### **⚠️ Verbesserungspotenzial:**
+### ** Verbesserungspotenzial:**
 - CORS: `allow_origins=["*"]` → spezifische Domains in Production
 - API-Key: Sollte in `.env` sein (nicht hardcoded)
 - Rate Limiting fehlt
@@ -206,7 +206,7 @@ RSQ = 0.75 × best_score + 0.25 × margin
 
 ---
 
-## 📊 Datenfluss
+##  Datenfluss
 
 ```
 User Input (Frontend)
@@ -226,7 +226,7 @@ JSON Response → Frontend → Display Message
 
 ---
 
-## 🚀 Deployment
+##  Deployment
 
 ### **Docker-Setup:**
 - Base: `python:3.11-slim`
@@ -238,7 +238,7 @@ JSON Response → Frontend → Display Message
 
 ---
 
-## 📈 Skalierbarkeit & Performance
+## Skalierbarkeit & Performance
 
 ### **Stärken:**
 - Lokale Suche ist schnell (TF-IDF in Memory)
@@ -252,7 +252,7 @@ JSON Response → Frontend → Display Message
 
 ---
 
-## 🎓 Zusammenfassung
+## Zusammenfassung
 
 **Technologie-Stack:**
 - **Backend:** FastAPI + OpenAI + scikit-learn
@@ -273,7 +273,7 @@ JSON Response → Frontend → Display Message
 
 ---
 
-## ❓ Häufige Fragen zum Projekt
+##  Häufige Fragen zum Projekt
 
 **Q: Warum zwei Suchmethoden?**
 A: Cloud (OpenAI) ist präziser für Topic-Erkennung, aber teurer und langsamer. Lokale Suche ist kostenlos und schnell, aber weniger intelligent. Die Kombination bietet Best-of-Both-Worlds.
