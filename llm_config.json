@@ -1,0 +1,26 @@
+{
+  "fast": {
+    "model": "qwen2.5:3b",
+    "fallback": "llama3.2:1b",
+    "max_tokens": 150,
+    "temperature": 0.1,
+    "timeout": 30,
+    "description": "Schnelles Modell für einfache Fragen"
+  },
+  "standard": {
+    "model": "qwen2.5:7b",
+    "fallback": "qwen2.5:3b",
+    "max_tokens": 400,
+    "temperature": 0.2,
+    "timeout": 90,
+    "description": "Standard-Modell für normale Fragen"
+  },
+  "reasoning": {
+    "model": "mixtral:8x22b",
+    "fallback": "qwen2.5:72b",
+    "max_tokens": 1000,
+    "temperature": 0.3,
+    "timeout": 300,
+    "description": "BESTES Reasoning-Modell für komplexe Fragen (mixtral:8x22b, qwen2.5:72b oder qwen2.5:32b)"
+  }
+}
