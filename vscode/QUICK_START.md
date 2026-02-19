@@ -1,6 +1,6 @@
-# 🚀 Quick Start: Cursor Tasks
+# Quick Start: Cursor Tasks
 
-## ⚡ Schnellstart
+## Schnellstart
 
 ### Ports prüfen
 1. `Ctrl+Shift+P` → `Tasks: Run Task` → `Check Ports`
@@ -8,7 +8,7 @@
 ### Container starten
 1. `Ctrl+Shift+P` → `Tasks: Run Task` → `Start Chatbot Container`
 
-## 📋 Alle verfügbaren Tasks
+##  Alle verfügbaren Tasks
 
 | Task | Tastenkombination | Beschreibung |
 |------|-------------------|--------------|
@@ -18,7 +18,7 @@
 | **Restart Chatbot Container** | `Ctrl+Shift+P` → `Tasks: Run Task` | Startet Container neu |
 | **View Container Logs** | `Ctrl+Shift+P` → `Tasks: Run Task` | Zeigt Container-Logs (live) |
 
-## 🎯 Häufige Workflows
+##  Häufige Workflows
 
 ### Workflow 1: Container starten (mit Port-Check)
 ```
@@ -43,13 +43,13 @@
 3. "Restart Chatbot Container"
 ```
 
-## 💡 Tipps
+##  Tipps
 
 - **Interaktive Tasks**: Bei "Start Chatbot Container" können Sie im Terminal interagieren
 - **Logs ansehen**: "View Container Logs" zeigt live-Logs (mit `Ctrl+C` beenden)
 - **Schnellzugriff**: `Ctrl+Shift+B` öffnet direkt Build-Tasks
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Task wird nicht gefunden
 - Prüfen Sie, ob `.vscode/tasks.json` existiert
@@ -62,3 +62,4 @@
 ### Port-Konflikte
 - Verwenden Sie "Check Ports" vor dem Start
 - "Start Chatbot Container" bietet automatische Lösungen
+
