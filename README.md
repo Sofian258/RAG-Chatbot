@@ -29,13 +29,6 @@ Ein wiederverwendbarer RAG (Retrieval-Augmented Generation) Chatbot mit Multi-Te
 - Docker & Docker Compose
 - ---------------------------------------------------------------------------Git
 
-## Installation
-
-1. **Repository klonen:**
-git clone https://github.com/DEIN-USERNAME/DEIN-REPO.git
-cd Chatbotproject
-
-
 
 ## Docker Container starten:
 
