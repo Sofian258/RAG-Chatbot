@@ -27,8 +27,6 @@ Ein wiederverwendbarer RAG (Retrieval-Augmented Generation) Chatbot mit Multi-Te
 ## Voraussetzungen
 
 - Docker & Docker Compose
-- ---------------------------------------------------------------------------Git
-
 
 ## Docker Container starten:
 
@@ -37,6 +35,15 @@ docker-compose up -d
 - **Die Container laden automatisch die benötigten LLM-Modelle (kann einige Minuten dauern).
 
 
+
+
+
+
+**Wichtig Wichtig Wichtig Wichtig: Erst Docker starten, dann funktionieren die Links.**
+
+
+
+  
 ## API testen:
 
 - **Swagger UI öffnen
