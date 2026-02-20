@@ -169,16 +169,6 @@ Chatbotproject/
 └── ARCHITEKTUR.md        # Detaillierte Architektur-Dokumentation 
 
 
-
-
-
-
- 
- ## Multi-Tenant Sicherheit
- 
-- **Jede Firma hat isolierte Indizes und Dokumente
-- **company_id ist Pflichtfeld für alle Chat-Anfragen
-- **Keine Datenüberschneidung zwischen Firmen
   
  ## Docker
 
@@ -187,6 +177,3 @@ docker-compose up -d
 
 # Container stoppen
 docker-compose down
-
-# Logs anzeigen
-docker-compose logs -f chatbot
