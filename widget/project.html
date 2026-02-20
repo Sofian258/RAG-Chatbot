@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projekt-Erstellung Widget</title>
+  <link rel="stylesheet" href="./project.css" />
+</head>
+<body>
+  <button id="project-open" aria-label="Projekt erstellen">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="12" y1="5" x2="12" y2="19"/>
+      <line x1="5" y1="12" x2="19" y2="12"/>
+    </svg>
+  </button>
+
+  <div id="projectbox" class="hidden">
+    <div id="project-header">
+      <div class="header-content">
+        <div class="header-icon">📋</div>
+        <div class="header-info">
+          <h3>Neues Projekt</h3>
+          <span class="subtitle">Planvo IT & Automation</span>
+        </div>
+      </div>
+      <button id="project-close" aria-label="Schließen">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="project-form-container">
+      <form id="project-form">
+        <div class="form-group">
+          <label for="name">Name <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="z.B. Firewall-Upgrade Standort B" 
+            required 
+            aria-label="Projektname"
+          />
+          <small>Kurzer Titel, der beschreibt, worum es geht</small>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Beschreibung</label>
+          <textarea 
+            id="description" 
+            name="description" 
+            rows="3" 
+            placeholder="z.B. Einrichtung VPN-Zugänge für 25 User"
+            aria-label="Projektbeschreibung"
+          ></textarea>
+          <small>Kurz was gemacht werden soll und mit welchem Ziel</small>
+        </div>
+
+        <div class="form-group">
+          <label for="ort">Ort</label>
+          <input 
+            type="text" 
+            id="ort" 
+            name="ort" 
+            placeholder="Adresse oder 'Remote'" 
+            aria-label="Ort"
+          />
+          <small>Adresse oder Standort. Falls nur remote, kurz "Remote" schreiben</small>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="startdatum">Startdatum</label>
+            <input 
+              type="date" 
+              id="startdatum" 
+              name="startdatum" 
+              aria-label="Startdatum"
+            />
+          </div>
+          <div class="form-group">
+            <label for="enddatum">Enddatum</label>
+            <input 
+              type="date" 
+              id="enddatum" 
+              name="enddatum" 
+              aria-label="Enddatum"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="projekttyp">Projekttyp</label>
+          <select id="projekttyp" name="projekttyp" aria-label="Projekttyp">
+            <option value="">-- Bitte wählen --</option>
+            <option value="Automation">Automation</option>
+            <option value="IT-Infrastruktur">IT-Infrastruktur</option>
+            <option value="Sicherheit">Sicherheit</option>
+            <option value="Kundenspezifisch">Kundenspezifisch</option>
+          </select>
+          <small>Kategorie wie "Automation", "IT-Infrastruktur", "Sicherheit" oder kundenspezifisch</small>
+        </div>
+
+        <div class="form-group">
+          <label for="ansprechpartner">Ansprechpartner</label>
+          <input 
+            type="text" 
+            id="ansprechpartner" 
+            name="ansprechpartner" 
+            placeholder="Name der Person" 
+            aria-label="Ansprechpartner"
+          />
+          <small>Wer entscheidet und Rückfragen beantwortet</small>
+        </div>
+
+        <div class="form-group">
+          <label for="team_type">Team</label>
+          <select id="team_type" name="team_type" aria-label="Team">
+            <option value="">-- Kann später ergänzt werden --</option>
+            <option value="Techniker">Techniker</option>
+            <option value="Entwickler">Entwickler</option>
+          </select>
+          <small>Techniker oder Entwickler, falls bekannt. Kann später ergänzt werden.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="company_id">Firma (optional)</label>
+          <input 
+            type="text" 
+            id="company_id" 
+            name="company_id" 
+            placeholder="company_id" 
+            aria-label="Firma"
+          />
+        </div>
+
+        <div id="form-status"></div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn-primary">
+            <span class="btn-text">Projekt erstellen</span>
+            <span class="btn-loading hidden">Wird erstellt...</span>
+          </button>
+        </div>
+      </form>
+
+      <div id="success-message" class="hidden">
+        <div class="success-icon">✓</div>
+        <h4>Projekt erfolgreich erstellt!</h4>
+        <p id="project-id-display"></p>
+        <button id="new-project-btn" class="btn-secondary">Neues Projekt</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./project.js"></script>
+</body>
+</html>
